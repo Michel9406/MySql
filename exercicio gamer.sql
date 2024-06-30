@@ -40,10 +40,13 @@ SELECT * FROM tb_personagens WHERE ataque > 2000;
 
 SELECT * FROM tb_personagens WHERE defesa BETWEEN 1000 AND 2000;
 
-SELECT * FROM tb_personagens WHERE nome LIKE "%c%";
+SELECT * FROM tb_personagens WHERE nome LIKE "%s%";
+
+SELECT  nome, jutsu, ataque, defesa, tb_classe.nome_classe, tb_classe.cla 
+FROM tb_personagens INNER JOIN tb_classe
+ON tb_personagens.id_classe = tb_classe.id ;
 
 SELECT  nome, jutsu, ataque, defesa, tb_classe.nome_classe, tb_classe.cla FROM
 tb_personagens INNER JOIN tb_classe
-ON tb_personagens.id_classe = tb_classe.id;
-
+ON tb_personagens.id_classe = tb_classe.id WHERE tb_classe.cla_classe = 'nome';
 
